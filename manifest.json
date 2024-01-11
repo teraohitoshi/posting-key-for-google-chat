@@ -1,7 +1,11 @@
 {
    "action": {
       "default_popup": "popup.html",
-      "default_title": "Options"
+      "default_title": "Options",
+      "default_icon": {
+         "16": "favicon16.png",
+         "32": "favicon32.png"
+      }
    },
    "content_scripts": [ {
       "all_frames": true,
