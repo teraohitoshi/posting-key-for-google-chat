@@ -31,30 +31,12 @@
     if (event[postKey]) {
       // postKey + Enter
       // Post message
-      /*
-      const properties = {
-        key: event.key,
-        code: event.code,
-        location: event.location,
-        ctrlKey: event.ctrlKey,
-        shiftKey: event.shiftKey,
-        altKey: event.altKey,
-        metaKey: event.metaKey,
-        repeat: event.repeat,
-        isComposing: event.isComposing,
-        bubbles: event.bubbles,
-        cancelable: event.cancelable,
-        composed: event.composed
-      };
-      properties[postKey] = false;
-      */
-      
       const properties = [];
       for (const key in event) {
         properties[key] = event[key];
       }
       properties.shiftKey = false;
-  
+      
       const modifiedEvent = new KeyboardEvent("keydown", properties);
       modifiedEvent.isModified = true;
       event.target.dispatchEvent(modifiedEvent);
@@ -79,17 +61,11 @@
       }
       if (isInsideList) {
         // create new bullet
-        /*
-        document.execCommand("insertParagraph");
-        */
         return;
       } else {
         // linebreak
         document.execCommand("insertLineBreak");
       }
-      /*
-      document.execCommand("insertLineBreak");
-      */
     }
 
     // Prevent default
